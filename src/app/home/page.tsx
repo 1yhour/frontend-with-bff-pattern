@@ -64,23 +64,23 @@ export default function Home() {
         handleFetch();
     },[]);
     return (
-        <div className="min-h-screen flex flex-col justify-between bg-slate-950 text-slate-100 selection:bg-slate-800">
+        <div className="min-h-screen flex flex-col justify-between bg-zinc-950 text-zinc-100 selection:bg-zinc-800">
             <Header />
 
             <main className="flex-1 max-w-5xl w-full mx-auto px-6 py-16 flex flex-col items-center justify-center">
                 <div className="text-center max-w-xl mb-12">
-                    <span className="text-xs uppercase tracking-widest text-slate-400 font-semibold px-3 py-1 bg-slate-900 rounded-full border border-slate-800 inline-block mb-4">
+                    <span className="text-xs uppercase tracking-widest text-zinc-400 font-semibold px-3 py-1 bg-zinc-900 rounded-full border border-zinc-800 inline-block mb-4">
                         Dashboard
                     </span>
-                    <h1 className="text-4xl sm:text-5xl font-extralight tracking-tight text-white mb-3">
+                    <h1 className="text-4xl sm:text-5xl font-extralight tracking-tight text-zinc-100 mb-3">
                         Welcome Home
                     </h1>
-                    <p className="text-sm text-slate-400 font-light leading-relaxed">
+                    <p className="text-sm text-zinc-400 font-light leading-relaxed">
                         Manage your products and view your current collection with clean, minimalist precision.
                     </p>
 
                     {error && (
-                        <div className="mt-4 p-3 bg-red-500/10 border border-red-500/20 text-red-400 text-sm rounded-lg">
+                        <div className="mt-4 p-3 bg-red-950/20 border border-red-900/40 text-red-400 text-sm rounded-lg">
                             {error}
                         </div>
                     )}
@@ -90,18 +90,18 @@ export default function Home() {
                             onClick={handleLogout} 
                             disabled={isLoading}
                             variant="outline"
-                            className="bg-slate-900 text-slate-200 border-slate-800 hover:bg-slate-800 hover:text-white transition-all text-sm px-6 py-2 rounded-lg font-normal"
+                            className="bg-zinc-900 text-zinc-200 border-zinc-800 hover:bg-zinc-800 hover:text-white transition-all text-sm px-6 py-2 rounded-lg font-normal"
                         >
                             {isLoading ? "Logging out..." : "Logout"}
                         </Button>
                     </div>
                 </div>
                 <div className="w-full max-w-2xl mt-4">
-                    <div className="flex items-center justify-between border-b border-slate-800/80 pb-4 mb-6">
-                        <h2 className="text-sm font-medium text-slate-300 uppercase tracking-wider">
+                    <div className="flex items-center justify-between border-b border-zinc-800/80 pb-4 mb-6">
+                        <h2 className="text-sm font-medium text-zinc-300 uppercase tracking-wider">
                             Products Catalog
                         </h2>
-                        <span className="text-xs text-slate-500 font-mono">
+                        <span className="text-xs text-zinc-500 font-mono">
                             {products.length} {products.length === 1 ? 'item' : 'items'}
                         </span>
                     </div>
@@ -111,23 +111,23 @@ export default function Home() {
                             {products.map((product) => (
                                 <div 
                                     key={product.id} 
-                                    className="p-4 border border-slate-800/60 rounded-xl bg-slate-900/40 backdrop-blur-md flex items-center justify-between hover:border-slate-700/80 hover:bg-slate-900/80 transition-all duration-200 group"
+                                    className="p-4 border border-zinc-800/60 rounded-xl bg-zinc-900/40 backdrop-blur-md flex items-center justify-between hover:border-zinc-700/80 hover:bg-zinc-900/80 transition-all duration-200 group"
                                 >
                                     <div className="flex items-center space-x-3">
-                                        <div className="w-2 h-2 rounded-full bg-emerald-500/80 group-hover:bg-emerald-400 transition-colors" />
-                                        <span className="text-sm font-medium text-slate-200 group-hover:text-white">
+                                        <div className="w-2 h-2 rounded-full bg-zinc-300 group-hover:bg-zinc-100 transition-colors" />
+                                        <span className="text-sm font-medium text-zinc-200 group-hover:text-white">
                                             {product.name}
                                         </span>
                                     </div>
-                                    <span className="text-sm font-mono text-emerald-400/90 font-medium">
+                                    <span className="text-sm font-mono text-zinc-400 font-medium">
                                         ${product.price.toFixed(2)}
                                     </span>
                                 </div>
                             ))}
                         </div>
                     ) : (
-                        <div className="text-center py-12 border border-dashed border-slate-800/80 rounded-xl bg-slate-900/20">
-                            <p className="text-sm text-slate-500 font-light">No products available at the moment.</p>
+                        <div className="text-center py-12 border border-dashed border-zinc-800/80 rounded-xl bg-zinc-900/20">
+                            <p className="text-sm text-zinc-500 font-light">No products available at the moment.</p>
                         </div>
                     )}
                 </div>
